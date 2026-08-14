@@ -62,7 +62,6 @@ body {
       @media (max-width: $breakpoint-small) {
         grid-column: 1;
         grid-row: 3 / span 4;
-        align-self: end;
       }
     }
 
@@ -74,7 +73,7 @@ body {
 
       @media (max-width: $breakpoint-small) {
         flex-direction: column-reverse;
-        margin: $gap-mobile 0 (0 - $gap-mobile) (0 - $gap-mobile);
+        margin: 0 0 (0 - $gap-mobile) (0 - $gap-mobile);
         padding: 0 $gap-mobile $gap-mobile $gap-mobile;
       }
     }
