@@ -1,4 +1,5 @@
 @use 'tokens' as *;
+@use 'px-to-rem' as *;
 
 //Layout Grid
 $columns: 6;
@@ -19,7 +20,6 @@ body {
 
 .layout {
   position: relative;
-  width:  100%;
   min-height: 1200px;
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
@@ -28,9 +28,9 @@ body {
   padding: $spacing-x6;
 
   @media (max-width: $breakpoint-small) {
-    min-height: 792px;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat($rows, 1fr);
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
     gap: $spacing-x3;
     padding: $spacing-x3;
   }
@@ -38,17 +38,20 @@ body {
   &_design {
     background-color: var(--color-design-bg);
 
+    .header {
+      grid-column: span 3;
+      align-items: center;
+
+      @media (max-width: $breakpoint-small) {
+        margin-bottom: $rythm-two-rows;
+      }
+    }
+
     .hero {
       display: flex;
       align-items: center;
       grid-column: span 5;
       grid-row: 2 / span 3;
-
-      @media (max-width: $breakpoint-small) {
-        grid-column: 1;
-        grid-row: 2;
-        align-items: end;
-      }
     }
 
     .description {
@@ -60,12 +63,10 @@ body {
       }
 
       @media (max-width: $breakpoint-small) {
-        grid-column: 1;
-        grid-row: 3 / span 4;
+        margin-bottom: $rythm-two-rows;
       }
     }
 
-    //Decor
     .footer {
       margin: 0 - $gap-desktop;
       padding: $gap-desktop;
@@ -74,7 +75,28 @@ body {
       @media (max-width: $breakpoint-small) {
         flex-direction: column-reverse;
         margin: 0 0 (0 - $gap-mobile) (0 - $gap-mobile);
-        padding: 0 $gap-mobile $gap-mobile $gap-mobile;
+        padding: $gap-mobile;
+      }
+    }
+
+    .decor {
+      grid-column: 4 / span 3;
+      grid-row: 1;
+      background-color: var(--color-design-system-bg);
+      margin: (0 - $gap-desktop) (0 - $gap-desktop) (0 - $gap-desktop) 0;
+
+      @media (max-width: $breakpoint-medium) {
+        display: none;
+      }
+
+      @media (max-width: $breakpoint-small) {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: $spacing-x3;
+        height: to-rem(120px);
+        margin: 0;
       }
     }
   }
@@ -92,8 +114,7 @@ body {
       }
 
       @media (max-width: $breakpoint-small) {
-        grid-column: 1;
-        grid-row: 2 / span 4;
+        margin-top: $rythm-two-rows;
       }
     }
 
@@ -105,34 +126,19 @@ body {
       color: var(--color-text-primary-inverted);
 
       @media (max-width: $breakpoint-small) {
-        grid-column: 1;
-        grid-row: 6;
-        align-items: end;
+        margin-bottom: $rythm-two-rows;
       }
     }
 
+    .footer {
+      padding-top: $gap-mobile;
+    }
+
     .decor {
-      position: relative;
       grid-column: 4 / -1;
       grid-row: 8 / -1;
-
-      &::after {
-        position: absolute;
-        top: 0 - $gap-desktop;
-        bottom: 0 - $gap-desktop;
-        left: 0;
-        right: 0 - $gap-desktop;
-        z-index: 1;
-        background-color: var(--color-case-bg);
-        content: "";
-
-        @media (max-width: $breakpoint-small) {
-          top: $gap-mobile;
-          bottom: 0 - $gap-mobile;
-          left: 100%;
-          right: 0 - $gap-mobile
-        }
-      }
+      background-color: var(--color-case-bg);
+      margin: (0 - $gap-desktop) (0 - $gap-desktop) (0 - $gap-desktop) 0;
 
       @media (max-width: $breakpoint-medium) {
         grid-column: 6;
@@ -140,8 +146,13 @@ body {
       }
 
       @media (max-width: $breakpoint-small) {
-        grid-column: 1;
-        grid-row: 7 / span 2;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: $spacing-x3;
+        height: to-rem(120px);
+        margin: 0;
       }
     }
   }
@@ -244,7 +255,6 @@ body {
   }
 }
 
-//Design System
 .design-system {
   display: flex;
   grid-column: 4 / span 3;
