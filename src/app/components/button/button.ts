@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, input, ViewEncapsulation } from '@angular/core';
+import { booleanAttribute, Component, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 type Priority = 'primary' | 'secondary';
 
@@ -14,6 +14,7 @@ type Priority = 'primary' | 'secondary';
     '[class.button_secondary]': 'priority() === "secondary"',
     '[class.button_icon]': 'icon()',
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   encapsulation: ViewEncapsulation.None
 })
 export class Button {

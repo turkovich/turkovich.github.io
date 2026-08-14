@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'a[ntLink]',
@@ -12,6 +12,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   host: {
     class: 'link link_default',
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   encapsulation: ViewEncapsulation.None
 })
 export class Link {

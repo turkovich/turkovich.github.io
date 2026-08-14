@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'nt-tabs',
@@ -10,6 +10,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   host: {
     class: 'tabs',
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   encapsulation: ViewEncapsulation.None
 })
 export class Tabs {

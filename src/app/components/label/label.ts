@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'label[ntLabel]',
@@ -9,6 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   host: {
     class: 'label'
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   encapsulation: ViewEncapsulation.None
 })
 export class Label {

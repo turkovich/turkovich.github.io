@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Tag, Link } from "./components/export";
 import { Button } from "./components/button/button";
@@ -14,6 +14,7 @@ import { Tab } from "./components/tabs/tab";
   selector: 'app-root',
   imports: [RouterOutlet, Tag, Button, Label, Input, Switch, Checkbox, Radiobuton, Tabs, Link, Tab],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss'
 })
 export class App {

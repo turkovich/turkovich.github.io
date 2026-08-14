@@ -1,4 +1,4 @@
-import { Component, input, ViewEncapsulation } from '@angular/core';
+import { Component, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 type Theme = 'design' | 'code';
 
@@ -13,6 +13,7 @@ type Theme = 'design' | 'code';
     '[class.tag_design]': 'theme() === "design"',
     '[class.tag_code]': 'theme() === "code"',
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   encapsulation: ViewEncapsulation.None
 })
 

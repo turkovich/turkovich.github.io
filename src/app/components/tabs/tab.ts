@@ -1,4 +1,4 @@
-import { Component, input, ViewEncapsulation } from '@angular/core';
+import { Component, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Label } from '../label/label';
 
 @Component({
@@ -12,6 +12,7 @@ import { Label } from '../label/label';
   host: {
     class: 'tab',
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   encapsulation: ViewEncapsulation.None
 })
 export class Tab {
