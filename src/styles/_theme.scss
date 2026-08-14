@@ -1,0 +1,51 @@
+:root {
+  --color-text-primary: #1C1917;
+  --color-text-primary-inverted: #FFF;
+  --color-text-secondary: #75726F;
+  --color-text-secondary-inverted: #A6A3A0;
+  --color-design-bg: #FFF;
+  --color-code-bg: #1C1917;
+  --color-case-bg: #44413C;
+  --color-design-system-bg: #F5F5F4;
+  --color-bage-open: #0055FF;
+  --color-bage-busy: #9D2500;
+  --color-tag-bg-design: #E7E5E4;
+  --color-tag-bg-code: #44413C;
+
+  //Link
+  --color-link-default: #4D88FF;
+  --color-link-hover: #FFF;
+
+  //Button
+  --color-button-primary-bg-default: #0055FF;
+  --color-button-primary-bg-hover: #0055FF;
+  --color-button-primary-text: #FFF;
+  --color-button-primary-shadow: #002266;
+  --color-button-secondary-bg-default: #E7E5E4;
+  --color-button-secondary-bg-hover: #E7E5E4;
+  --color-button-secondary-text: #1C1917;
+  --color-button-secondary-shadow: #A6A3A0;
+
+  //Input
+  --color-input-text: #1C1917;
+  --color-input-placeholder: #75726F;
+  --color-input-bg: #E7E5E4;
+  --color-input-shadow: #A6A3A0;
+
+  //Switch, Checkbox, Radiobutton
+  --color-switch-bg-default: #E7E5E4;
+  --color-switch-bg-checked-default: #0055FF;
+  --color-switch-bg-checked-hover: #0055FF;
+  --color-switch-shadow-default: #A6A3A0;
+  --color-switch-shadow-checked: #002266;
+  --color-switch-icon-checked: #FFF;
+  --color-knob-bg: #FFF;
+  --color-knob-shadow-default: #A6A3A0;
+  --color-knob-shadow-checked: #002266;
+
+  //Tabs
+  --color-tabs-bg: #E7E5E4;
+  --color-tab-bg-hover: #F5F5F4;
+  --color-tab-bg-selected: #FFF;
+  --color-tab-shadow-selected: #A6A3A0;
+}

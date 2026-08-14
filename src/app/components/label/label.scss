@@ -1,0 +1,7 @@
+@use '../../../styles/tokens' as *;
+
+.label {
+  color: var(--color-text-primar);
+  font-size: $font-size-body-secondary;
+  line-height: $line-height-body-secondary;
+}

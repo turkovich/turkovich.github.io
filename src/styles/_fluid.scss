@@ -1,0 +1,15 @@
+@use 'sass:math';
+
+@function fluid($min, $max, $min-vw: 400, $max-vw: 1920, $base-font-size: 16) {
+  $min-num: if(sass(math.is-unitless($min)): $min; else: math.div($min, 1rem));
+  $max-num: if(sass(math.is-unitless($max)): $max; else: math.div($max, 1rem));
+
+  $slope-px: math.div(($max-num - $min-num) * $base-font-size, $max-vw - $min-vw);
+  $y-intercept-rem: $min-num - math.div($slope-px, $base-font-size) * $min-vw;
+
+  @return clamp(
+    #{$min-num}rem,
+    #{$y-intercept-rem}rem + #{$slope-px * 100}vw,
+    #{$max-num}rem
+  );
+}

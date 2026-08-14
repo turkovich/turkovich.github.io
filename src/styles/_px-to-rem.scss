@@ -1,0 +1,32 @@
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:meta';
+
+@function strip-unit($number) {
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function to-rem($values, $baseSize: 16) {
+  $remValues: ();
+  $baseSize: strip-unit($baseSize);
+
+  @if not list.length($values) {
+    @error 'List cannot be empty.';
+  }
+  @if list.separator($values) == 'comma' {
+    @error 'Only space separated list is allowed.';
+  }
+
+  @each $val in $values {
+    $remValues: list.append($remValues, calc(strip-unit($val) / $baseSize * 1rem));
+  }
+
+  @if list.length($remValues) == 1 {
+    @return list.nth($remValues, 1);
+  }
+
+  @return $remValues;
+}

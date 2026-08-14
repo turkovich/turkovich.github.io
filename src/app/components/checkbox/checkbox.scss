@@ -1,0 +1,51 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/px-to-rem' as *;
+
+.checkbox {
+  display: inline-flex;
+  gap: $spacing-x1;
+  align-items: center;
+  cursor: pointer;
+
+  &__control {
+    appearance: none;
+    display: inline-flex;
+    width: to-rem(24px);
+    height: to-rem(24px);
+    background-color: var(--color-switch-bg-default);
+    margin: 0;
+    border: none;
+    border-radius: $radius-micro;
+    transition: $transition-default;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 2px 0 inset var(--color-switch-shadow-default);
+    }
+
+    &:checked {
+      background-color: var(--color-switch-bg-checked-default);
+
+      &:hover {
+        background-color: var(--color-switch-bg-checked-hover);
+        box-shadow: 0 2px 0 inset var(--color-switch-shadow-checked);
+      }
+    }
+
+    &:checked ~ .checkbox__icon {
+      opacity: 100%;
+      fill: var(--color-switch-icon-checked);
+    }
+    
+  }
+
+  &__icon {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+}

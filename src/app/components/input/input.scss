@@ -1,0 +1,22 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/px-to-rem' as *;
+
+.input {
+  font-family: $font-family-body;
+  font-size: $font-size-body-secondary;
+  line-height: $line-height-body-secondary;
+  color: var(--color-input-text);
+  padding: calc($rythm-half-row - to-rem(1px)) $spacing-x2 calc($rythm-half-row + to-rem(1px)) $spacing-x2;
+  background-color: var(--color-input-bg);
+  border: none;
+  border-radius: $radius-micro;
+  transition: $transition-default;
+
+  &::placeholder {
+    color: var(--color-input-placeholder);
+  }
+
+  &:hover {
+    box-shadow: 0 2px 0 inset var(--color-input-shadow);
+  }
+}

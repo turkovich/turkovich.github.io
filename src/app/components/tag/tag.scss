@@ -1,0 +1,24 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/px-to-rem' as *;
+
+.tag {
+  display: inline-flex;
+  
+  font-size: $font-size-tag;
+  font-weight: 500;
+  line-height: $line-height-body-secondary;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  padding: $rythm-half-row $spacing-x2;
+  border-radius: to-rem(24px);
+
+  &_design {
+    color: var( --color-text-secondary);
+    background-color: var(--color-tag-bg-design);
+  }
+
+  &_code {
+    color: var( --color-text-secondary-inverted);
+    background-color: var(--color-tag-bg-code);
+  }
+}

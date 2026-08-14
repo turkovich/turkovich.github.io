@@ -1,0 +1,9 @@
+@use 'tokens' as *;
+@use 'px-to-rem' as *;
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-x1;
+  margin-bottom: $rythm-row;
+}

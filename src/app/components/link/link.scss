@@ -1,0 +1,33 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/px-to-rem' as *;
+
+.link {
+  position: relative;
+  display: inline-flex;
+  gap: $spacing-x1;
+  text-decoration-thickness: 5%;
+  text-underline-offset: 15%;
+  text-underline-position: from-font;
+  transition: color $transition-default;
+
+  &_default {
+    color: var(--color-link-default);
+
+    &:hover {
+      color: var(--color-link-hover);
+
+      .link__external {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__external {
+    position: absolute;
+    right: 0 - calc($spacing-x1 + to-rem(2px));
+    top: 0;
+    fill: var(--color-link-hover);
+    opacity: 0;
+    transition: opacity $transition-default;
+  }
+}

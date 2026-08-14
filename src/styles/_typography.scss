@@ -1,0 +1,28 @@
+@use 'tokens' as *;
+@use 'fluid' as *;
+
+body {
+  color: var(--color-text-primary);
+  font-family: $font-family-body;
+  font-size: $font-size-body-primary;
+  line-height: $line-height-body-primary;
+
+  @media (max-width: $breakpoint-small) {
+    font-size: $font-size-body-secondary;
+    line-height: $line-height-body-secondary;
+  }
+}
+
+.title {
+  font-family: $font-family-title;
+  font-size: fluid($font-size-title-min, $font-size-title);
+  line-height: fluid($line-height-title-min, $line-height-title);
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-narrow;
+  font-weight: normal;
+  margin: 0;
+
+  @media (max-width: $breakpoint-small) {
+    letter-spacing: $letter-spacing-default;
+  }
+}

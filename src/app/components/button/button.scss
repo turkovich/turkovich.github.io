@@ -1,0 +1,63 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/px-to-rem' as *;
+
+.button {
+  font-family: $font-family-body;
+  font-size: $font-size-body-secondary;
+  line-height: $line-height-body-secondary;
+  padding: calc($rythm-half-row - to-rem(1px)) $spacing-x3 calc($rythm-half-row + to-rem(1px)) $spacing-x3;
+  border: none;
+  border-radius: $radius-micro;
+  cursor: pointer;
+
+  svg {
+    vertical-align: bottom;
+  }
+
+  &_primary {
+    color: var(--color-button-primary-text);
+    background-color: var(--color-button-primary-bg-default);
+    transition: $transition-default;
+
+    svg {
+      fill: var(--color-button-primary-text);
+    }
+
+    &:hover {
+      background-color: var(--color-button-primary-bg-hover);
+      box-shadow: 0 -2px 0 inset var(--color-button-primary-shadow);
+    }
+
+    &:active {
+      transform: scale($scale-reduce);
+      box-shadow: 0 2px 0 inset var(--color-button-primary-shadow);
+      transition-property: color, background-color;
+    }
+  }
+
+  &_secondary {
+    color: var(--color-button-secondary-text);
+    background-color: var(--color-button-secondary-bg-default);
+    transition: $transition-default;
+
+    svg {
+      fill: var(--color-button-secondary-text);
+    }
+
+    &:hover {
+      background-color: var(--color-button-secondary-bg-hover);
+      box-shadow: 0 -2px 0 inset var(--color-button-secondary-shadow);
+    }
+
+    &:active {
+      transform: scale($scale-reduce);
+      box-shadow: 0 2px 0 inset var(--color-button-secondary-shadow);
+      transition-property: color, background-color;
+    }
+  }
+
+  &_icon {
+    min-width: to-rem(48px);
+    padding: $rythm-half-row 0;
+  }
+}

@@ -1,0 +1,45 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/px-to-rem' as *;
+
+.tabs {
+  display: inline-flex;
+  gap: calc($spacing-x1 / 2);
+  background-color: var(--color-tabs-bg);
+  border-radius: $radius-default;
+  padding: calc($spacing-x1 / 2);
+}
+
+.tab {
+  position: relative;
+  display: inline-flex;
+
+  &__control {
+    appearance: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: $radius-micro;
+    transition: $transition-default;
+
+    &:hover:not(:checked) {
+      background-color: var(--color-tab-bg-hover);
+      box-shadow: 0 2px 0 var(--color-tab-shadow-selected);
+    }
+
+    &:checked {
+      background-color: var(--color-tab-bg-selected);
+    }
+
+    &:active:not(:checked) {
+      transform: scale($scale-reduce);
+    }
+  }
+
+  &__label {
+    position: relative;
+    padding: calc($spacing-x1 - to-rem(1px)) $spacing-x2 calc($spacing-x1 + to-rem(1px)) $spacing-x2;
+    z-index: 1;
+    cursor: pointer;
+  }
+}

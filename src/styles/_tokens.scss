@@ -1,0 +1,57 @@
+@use 'px-to-rem' as *;
+
+$base-unit: to-rem(8px);
+$base-line-height: to-rem(24px);
+
+//Typography
+$font-family-body: "Golos Text", sans-serif;
+$font-family-title: "Dela Gothic One", sans-serif;
+
+$font-size-title: to-rem(144px);
+$font-size-title-min: to-rem(32px);
+$line-height-title: $base-line-height * 7;
+$line-height-title-min: $base-line-height * 1.5;
+$font-size-body-primary: to-rem(26px);
+$font-size-body-secondary: to-rem(20px);
+$font-size-tag: to-rem(16px);
+$line-height-body-primary: $base-line-height * 1.5;
+$line-height-body-secondary: $base-line-height;
+$letter-spacing-body-primary: to-rem(1px);
+$letter-spacing-body-secondary: to-rem(0px);
+$letter-spacing-narrow: to-rem(-2px);
+$letter-spacing-wide: to-rem(1px);
+$letter-spacing-default: to-rem(0px);
+
+//Spacings
+$spacing-x1: calc($base-unit * 1); //8px
+$spacing-x2: calc($base-unit * 2); //16px
+$spacing-x3: calc($base-unit * 3); //24px
+$spacing-x4: calc($base-unit * 4); //32px
+$spacing-x6: calc($base-unit * 6); //48px
+$spacing-x8: calc($base-unit * 8); //64px
+$spacing-x10: calc($base-unit * 10); //80px
+
+//Radius
+$radius-micro: calc($base-unit / 2); //4px
+$radius-default: $base-unit; //8px
+$radius-circle: 100%;
+
+//Vertical Rythm
+$rythm-half-row: calc($base-line-height / 2);
+$rythm-row: $base-line-height;
+$rythm-two-rows: calc($base-line-height * 2); //48px
+
+//Microinteractions
+$transition-time-default: .2s;
+$transition-function-default: ease-in-out;
+$transition-function-smooth: cubic-bezier(0, 0, 0, 1);
+$transition-default: $transition-time-default $transition-function-default;
+$transition-smooth: $transition-time-default $transition-function-smooth;
+
+//Scale
+$scale-reduce: 0.96;
+
+//Breakpoints
+$breakpoint-mini: 576px;
+$breakpoint-small: 768px;
+$breakpoint-medium: 1024px;
