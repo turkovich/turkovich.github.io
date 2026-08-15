@@ -176,6 +176,12 @@ body {
   }
 }
 
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: $rythm-row;
+}
+
 .footer {
   display: grid;
   position: relative;
@@ -183,7 +189,7 @@ body {
   grid-row: 8;
   grid-template-columns: subgrid;
   gap: $spacing-x6;
-  align-items: end;
+  align-items: center;
   color: var(--color-text-secondary-inverted); 
   font-size: $font-size-body-secondary;
   line-height: $line-height-body-secondary;
