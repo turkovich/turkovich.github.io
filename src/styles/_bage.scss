@@ -2,10 +2,9 @@
 
 .bage {
   display: block;
-  min-width: $rythm-half-row;
-  min-height: $rythm-half-row;
+  width: $rythm-half-row;
+  height: $rythm-half-row;
   border-radius: $rythm-half-row;
-  margin: calc($rythm-half-row / 2) 0;
 
   &_open {
     background-color: var(--color-bage-open);
