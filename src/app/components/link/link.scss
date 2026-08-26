@@ -17,7 +17,19 @@
       color: var(--color-link-hover);
 
       .link__external {
-        opacity: 1;
+        fill: var(--color-link-hover);
+      }
+    }
+  }
+
+  &_inverted {
+    color: var(--color-link-default-inverted);
+
+    &:hover {
+      color: var(--color-link-hover-inverted);
+
+      .link__external {
+        fill: var(--color-link-hover-inverted);
       }
     }
   }
@@ -26,8 +38,11 @@
     position: absolute;
     right: 0 - calc($spacing-x1 + to-rem(2px));
     top: 0;
-    fill: var(--color-link-hover);
     opacity: 0;
     transition: opacity $transition-default;
+  }
+
+  &:hover .link__external {
+    opacity: 1;
   }
 }

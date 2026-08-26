@@ -1,4 +1,6 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, input } from '@angular/core';
+
+type Type = 'default' | 'inverted';
 
 @Component({
   selector: 'a[ntLink]',
@@ -11,10 +13,12 @@ import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/
   styleUrl: './link.scss',
   host: {
     class: 'link link_default',
+    '[class.link_default]': 'type() === "default"',
+    '[class.link_inverted]': 'type() === "inverted"',
   },
   changeDetection: ChangeDetectionStrategy.Eager,
   encapsulation: ViewEncapsulation.None
 })
 export class Link {
-
+  type = input<Type>('default');
 }
