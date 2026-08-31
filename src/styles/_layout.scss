@@ -175,6 +175,7 @@ body {
 
       @media (max-width: $breakpoint-small) {
         gap: $gap-mobile;
+        margin-right: 0 - $gap-mobile;
       }
     }
   }
@@ -211,6 +212,11 @@ body {
       grid-column: 3 / span 4;
       gap: $gap-desktop;
       margin-right: 0 - $gap-desktop;
+
+      @media (max-width: $breakpoint-small) {
+        gap: $gap-mobile;
+        margin-right: 0 - $gap-mobile;
+      }
     }
 
     .footer {

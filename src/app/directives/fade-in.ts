@@ -29,6 +29,8 @@ export class FadeInDirective {
   }
 
   private createObserver() {
+    console.log('[FadeIn] Observer created for:', this.el.nativeElement);
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
