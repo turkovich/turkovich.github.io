@@ -2,7 +2,7 @@
 
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY($spacing-x4);
   transition: opacity $transition-slow, transform $transition-slow;
   will-change: opacity, transform; 
 
