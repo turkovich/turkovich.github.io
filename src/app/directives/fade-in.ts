@@ -15,7 +15,7 @@ export class FadeInDirective {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
+              entry.target.classList.add('fade-in_is_visible');
               observer.unobserve(entry.target);
             }
           });
