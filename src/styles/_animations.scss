@@ -1,0 +1,14 @@
+@use 'tokens' as *;
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity $transition-slow, transform $transition-slow;
+  will-change: opacity, transform; 
+
+  &_is_visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
