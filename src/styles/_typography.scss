@@ -14,15 +14,36 @@ body {
 }
 
 .title {
-  font-family: $font-family-title;
-  font-size: fluid($font-size-title-min, $font-size-title);
-  line-height: fluid($line-height-title-min, $line-height-title);
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-narrow;
-  font-weight: normal;
-  margin: 0;
 
-  @media (max-width: $breakpoint-small) {
-    letter-spacing: $letter-spacing-default;
+  &_h1 {
+    font-family: $font-family-title;
+    font-size: fluid($font-size-title-min, $font-size-title);
+    line-height: fluid($line-height-title-min, $line-height-title);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-narrow;
+    font-weight: normal;
+    margin: 0;
+
+    @media (max-width: $breakpoint-small) {
+      letter-spacing: $letter-spacing-default;
+    }
+  }
+
+  &_h2, &_h3 {
+    color: var(--color-text-secondary);
+    font-size: $font-size-tag;
+    font-weight: 500;
+    line-height: $line-height-body-secondary;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    margin: 0;
+
+    &_inverted {
+      color: var(--color-text-secondary-inverted);
+    }
+  }
+
+  &_h3 {
+    margin-bottom: $rythm-half-row;
   }
 }

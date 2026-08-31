@@ -40,12 +40,16 @@ $radius-circle: 100%;
 $rythm-half-row: calc($base-line-height / 2);
 $rythm-row: $base-line-height;
 $rythm-two-rows: calc($base-line-height * 2); //48px
+$rythm-three-rows: calc($base-line-height * 3); //72px
+$rythm-four-rows: calc($base-line-height * 4); //96px
 
 //Microinteractions
 $transition-time-default: .2s;
+$transition-time-slow: .4s;
 $transition-function-default: ease-in-out;
 $transition-function-smooth: cubic-bezier(0, 0, 0, 1);
 $transition-default: $transition-time-default $transition-function-default;
+$transition-slow: $transition-time-slow $transition-function-default;
 $transition-smooth: $transition-time-default $transition-function-smooth;
 
 //Scale
@@ -55,3 +59,4 @@ $scale-reduce: 0.96;
 $breakpoint-mini: 576px;
 $breakpoint-small: 768px;
 $breakpoint-medium: 1024px;
+$breakpoint-large: 1440px;
