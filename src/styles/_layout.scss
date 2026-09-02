@@ -91,6 +91,7 @@ body {
       background-color: var(--color-design-system-bg);
       padding: 0 $spacing-x3;
       margin: (0 - $gap-desktop) (0 - $gap-desktop) (0 - $gap-desktop) 0;
+      overflow: hidden;
 
       @media (max-width: $breakpoint-medium) {
         display: none;
