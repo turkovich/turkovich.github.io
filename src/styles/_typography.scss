@@ -47,3 +47,8 @@ body {
     margin-bottom: $rythm-half-row;
   }
 }
+
+.wrong {
+  color: var(--color-tag-bg-design);
+  text-decoration: line-through;
+}
