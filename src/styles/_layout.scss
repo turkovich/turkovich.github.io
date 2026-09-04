@@ -191,11 +191,51 @@ body {
   }
 
   &_history {
-    grid-template-rows: $rythm-four-rows auto $rythm-four-rows $rythm-four-rows;
+    grid-template-rows: $rythm-four-rows auto $rythm-four-rows;
     row-gap: $gap-desktop; 
     min-height: auto;
     color: var(--color-text-primary-inverted);
     background-color: var(--color-code-bg);
+
+    @media (max-width: $breakpoint-medium) {
+      display: flex;
+      flex-direction: column;
+      gap: $gap-desktop;
+      padding: $gap-desktop;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      gap: $gap-mobile;
+      padding: $gap-mobile;
+    }
+
+    .description { 
+      grid-column: span 2;
+      gap: $gap-desktop;
+
+      @media (max-width: $breakpoint-small) {
+        gap: $gap-mobile;
+      }
+    }
+
+    .gallery {
+      grid-column: 3 / span 4;
+      gap: $gap-desktop;
+      margin-right: 0 - $gap-desktop;
+
+      @media (max-width: $breakpoint-small) {
+        gap: $gap-mobile;
+        margin-right: 0 - $gap-mobile;
+      }
+    }
+  }
+
+  &_concept {
+    grid-template-rows: $rythm-four-rows auto $rythm-four-rows;
+    row-gap: $gap-desktop; 
+    min-height: auto;
+    color: var(--color-text-primary-inverted);
+    background-color: var(--color-case-bg);
 
     @media (max-width: $breakpoint-medium) {
       display: flex;
@@ -241,7 +281,7 @@ body {
     .decor {
       grid-column: 4 / -1;
       grid-row: 4;
-      background-color: var(--color-case-bg);
+      background-color: var(--color-code-bg);
       margin: (0 - $gap-desktop) (0 - $gap-desktop) (0 - $gap-desktop) 0;
 
       @media (max-width: $breakpoint-medium) {
