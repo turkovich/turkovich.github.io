@@ -30,6 +30,7 @@ $spacing-x4: calc($base-unit * 4); //32px
 $spacing-x6: calc($base-unit * 6); //48px
 $spacing-x8: calc($base-unit * 8); //64px
 $spacing-x10: calc($base-unit * 10); //80px
+$spacing-x12: calc($base-unit * 12); //96px
 
 //Radius
 $radius-micro: calc($base-unit / 2); //4px
@@ -54,6 +55,10 @@ $transition-smooth: $transition-time-default $transition-function-smooth;
 
 //Scale
 $scale-reduce: 0.96;
+
+//Layout
+$gap-desktop: $spacing-x6;
+$gap-mobile: $spacing-x3;
 
 //Breakpoints
 $breakpoint-mini: 576px;

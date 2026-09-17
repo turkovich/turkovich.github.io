@@ -1,17 +1,18 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'input[ntInput]',
+  selector: 'nt-gallery',
+  imports: [],
   template: `
     <ng-content/>
   `,
-  imports: [],
-  styleUrl: './input.scss',
+  styleUrl: './gallery.scss',
   host: {
-    class: 'input',
+    class: 'gallery',
   },
   encapsulation: ViewEncapsulation.None
 })
-export class Input {
+
+export class Gallery {
 
 }

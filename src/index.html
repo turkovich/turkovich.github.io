@@ -2,13 +2,10 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Никита Туркович &mdash; Product Design &bull; Frontend</title>
+  <title>Никита Туркович &mdash; Design &bull; Frontend</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preload" href="fonts/DelaGothicOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/GolosText-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:title" content="Никита Туркович — Design • Frontend"/>
   <meta property="og:description" content="Проектирую интерфейсы и дизайн-системы для веб-сервисов. Переношу макеты в код. Кастомизирую и стилизую сторонние UI-компоненты."/>
   <meta property="og:image" content="https://turkovich.github.io/opengraph-image.png"/>
@@ -18,5 +15,42 @@
 </head>
 <body>
   <app-root></app-root>
+  <style>
+    #global-loader {
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%;
+      background: #ffffff;
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s ease;
+    }
+    
+    #global-loader .logo {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 
+      0% { opacity: 0.3 } 
+      50% { opacity: 1 }
+      100% { opacity: 0.3 }  
+    }
+  </style>
+  <div id="global-loader">
+    <img class="logo" src="/logo.svg" alt="NT">
+  </div>
+  <script>
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('global-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.remove(), 300);
+      }
+    });
+  </script>
 </body>
 </html>

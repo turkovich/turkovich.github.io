@@ -1,8 +1,8 @@
-import { FadeIn } from './fade-in';
+import { FadeInDirective } from './fade-in';
 
-describe('Fadein', () => {
+describe('FadeInDirective', () => {
   it('should create an instance', () => {
-    const directive = new FadeIn();
+    const directive = new FadeInDirective();
     expect(directive).toBeTruthy();
   });
 });

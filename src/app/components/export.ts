@@ -8,3 +8,5 @@ export * from './radiobuton/radiobuton';
 export * from './switch/switch';
 export * from './tabs/tabs';
 export * from './tabs/tab';
+export * from './gallery/gallery';
+export * from './gallery/picture';

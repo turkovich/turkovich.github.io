@@ -15,6 +15,14 @@
 }
 
 @font-face {
+  font-family: "Golos Text";
+  font-display: block;
+  src: url('/fonts/GolosText-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Dela Gothic One';
   font-display: block;
   src: url('/fonts/DelaGothicOne-Regular.woff2') format('woff2');

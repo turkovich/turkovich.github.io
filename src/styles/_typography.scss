@@ -29,13 +29,10 @@ body {
     }
   }
 
-  &_h2, &_h3 {
-    color: var(--color-text-secondary);
-    font-size: $font-size-tag;
-    font-weight: 500;
-    line-height: $line-height-body-secondary;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing-wide;
+  &_h2 {
+    font-size: $font-size-body-primary;
+    line-height: $line-height-body-primary;
+    font-weight: 700;
     margin: 0;
 
     &_inverted {
@@ -44,11 +41,32 @@ body {
   }
 
   &_h3 {
-    margin-bottom: $rythm-half-row;
+    color: var(--color-text-secondary);
+    font-size: $font-size-tag;
+    font-weight: 500;
+    line-height: $line-height-body-secondary;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    margin: 0 0 (0 - $rythm-half-row) 0;
+
+    &_inverted {
+      color: var(--color-text-secondary-inverted);
+    }
   }
 }
 
-.wrong {
-  color: var(--color-tag-bg-design);
-  text-decoration: line-through;
+.text {
+
+  &_secondary {
+    font-size: $font-size-body-secondary;
+    line-height: $line-height-body-secondary;
+  }
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: $rythm-half-row;
+  padding: 0 0 0 $spacing-x3;
+  margin: 0;
 }

@@ -10,3 +10,8 @@ p, ul, li {
 ul {
   list-style: none;
 }
+
+body:has(dialog[open]) {
+  overflow: hidden;
+  scrollbar-gutter: stable; 
+}
