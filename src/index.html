@@ -48,9 +48,13 @@
       const loader = document.getElementById('global-loader');
       if (loader) {
         loader.style.opacity = '0';
-        setTimeout(() => loader.remove(), 300);
+        setTimeout(() => {
+          loader.remove();
+          window.dispatchEvent(new CustomEvent('app-loaded'));
+        }, 300);
       }
     });
   </script>
+
 </body>
 </html>

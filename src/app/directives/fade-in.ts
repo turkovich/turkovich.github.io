@@ -1,4 +1,4 @@
-import { afterNextRender, Directive, ElementRef, inject } from '@angular/core';
+import { afterNextRender, Directive, ElementRef, inject, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[ntFadeIn]',
@@ -8,10 +8,18 @@ import { afterNextRender, Directive, ElementRef, inject } from '@angular/core';
 })
 export class FadeInDirective {
   private el = inject(ElementRef<HTMLElement>);
+  private renderer = inject(Renderer2);
 
-  constructor() {
+   constructor() {
     afterNextRender(() => {
-      this.createObserver();
+      if (document.getElementById('global-loader')) {
+        const unlisten = this.renderer.listen('window', 'app-loaded', () => {
+          this.createObserver();
+          unlisten();
+        });
+      } else {
+        this.createObserver();
+      }
     });
   }
 
