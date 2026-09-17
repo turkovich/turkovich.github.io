@@ -39,8 +39,11 @@
     }
 
     img {
-      //max-width: 100%;
       vertical-align: bottom;
+      
+      @media (max-width: $breakpoint-small) {
+        max-width: 100%;
+      }
     }
   }
 
