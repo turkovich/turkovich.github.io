@@ -48,9 +48,13 @@
       const loader = document.getElementById('global-loader');
       if (loader) {
         loader.style.opacity = '0';
-        setTimeout(() => loader.remove(), 300);
+        setTimeout(() => {
+          loader.remove();
+          window.dispatchEvent(new CustomEvent('app-loaded'));
+        }, 300);
       }
     });
   </script>
-<script src="main-HMSMYW4T.js" type="module"></script></body>
+
+<script src="main-TDWG47HU.js" type="module"></script></body>
 </html>
