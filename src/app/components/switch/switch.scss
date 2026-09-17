@@ -10,6 +10,7 @@
     appearance: none;
     display: inline-flex;
     min-width: to-rem(56px);
+    min-height: $rythm-row;
     background-color: var(--color-switch-bg-default);
     margin: 0;
     border: none;
