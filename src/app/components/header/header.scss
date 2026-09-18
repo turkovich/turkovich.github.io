@@ -1,0 +1,23 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/px-to-rem' as *;
+
+.header {
+
+  .logo {
+    display: flex;
+    column-gap: $spacing-x2;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-title);
+
+    img {
+      width: $base-unit * 12;
+      height: $base-unit * 12;
+
+      @media (max-width: $breakpoint-small) {
+        width: $base-unit * 6;
+        height: $base-unit * 6;
+      }
+    }
+  }
+}

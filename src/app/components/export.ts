@@ -10,3 +10,5 @@ export * from './tabs/tabs';
 export * from './tabs/tab';
 export * from './gallery/gallery';
 export * from './gallery/picture';
+export * from './header/header';
+export * from './footer/footer';

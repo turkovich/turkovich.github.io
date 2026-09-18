@@ -1,0 +1,32 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/px-to-rem' as *;
+
+.footer {
+  position: relative;
+  color: var(--color-text-secondary-inverted); 
+  font-size: $font-size-body-secondary;
+  line-height: $line-height-body-secondary;
+  background-color: var(--color-code-bg);
+
+  &__year {
+    position: relative;
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    display: flex;
+    z-index: 2;
+
+    @media (max-width: $breakpoint-medium) {
+      grid-column: 1 / span 2;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      grid-column: auto;
+    }
+  }
+
+  &__handmade {
+    grid-column: 4 / span 3;
+    grid-row: 1;
+    text-align: right;
+  }
+}

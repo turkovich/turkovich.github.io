@@ -63,10 +63,12 @@ body {
   }
 }
 
-ol {
+.list {
   display: flex;
   flex-direction: column;
   gap: $rythm-half-row;
   padding: 0 0 0 $spacing-x3;
   margin: 0;
+  list-style: disc ;
 }
+

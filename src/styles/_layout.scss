@@ -35,37 +35,52 @@ body {
     padding: $gap-mobile;
   }
 
+  .header {
+    grid-column: span 6;
+    grid-row: 1;
+
+    @media (max-width: $breakpoint-small) {
+      grid-column: 1;
+      margin-bottom: $rythm-two-rows;
+    }
+  }
+
+  .footer {
+    grid-column: span 6;
+    grid-row: 8;
+    margin: 0 - $gap-desktop;
+    padding: $gap-desktop;
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+    gap: $spacing-x6;
+
+    @media (max-width: $breakpoint-medium) {
+      grid-row: 8 / span 2;
+      gap: 0;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      margin: 0 - $gap-mobile;
+      padding: $gap-mobile;
+      display: flex;
+      flex-direction: column;
+      gap: $gap-mobile;
+      align-items: start;
+      justify-content: end;
+      grid-column: 1;
+      grid-row: 7 / -1;
+    }
+  }
+}
+
+.layout {
+
   &_design {
     background-color: var(--color-design-bg);
 
     @media (max-width: $breakpoint-medium) {
       grid-template-rows: repeat($rows + 1, 1fr);
-    }
-
-    .header {
-      align-items: center;
-
-      @media (max-width: $breakpoint-small) {
-        margin-bottom: $rythm-two-rows;
-      }
-
-      .logo {
-        display: flex;
-        column-gap: $spacing-x2;
-        align-items: center;
-        justify-content: space-between;
-        color: var(--color-title);
-
-        img {
-          width: $base-unit * 12;
-          height: $base-unit * 12;
-
-          @media (max-width: $breakpoint-small) {
-            width: $base-unit * 6;
-            height: $base-unit * 6;
-          }
-        }
-      }
     }
 
     .hero {
@@ -90,23 +105,10 @@ body {
     }
 
     .footer {
-      position: relative;
-      grid-column: span 6;
-      grid-row: 8;
-      margin: 0 - $gap-desktop;
-      padding: $gap-desktop;
-      background-color: var(--color-code-bg);
       align-items: end;
-
-      @media (max-width: $breakpoint-medium) {
-        grid-row: 8 / span 2;
-      }
 
       @media (max-width: $breakpoint-small) {
         flex-direction: column-reverse;
-        margin: 0 - $gap-mobile;
-        padding: ($rythm-row * 6) $gap-mobile $gap-mobile $gap-mobile;
-        align-items: start;
       }
 
       .status {
@@ -206,15 +208,6 @@ body {
       }
     }
 
-    .footer {
-      grid-column: span 6;
-      grid-row: 8;
-
-      @media (max-width: $breakpoint-small) {
-        margin-top: $rythm-two-rows;
-      }
-    }
-
     .tube {
       display: flex;
       justify-content: end;
@@ -245,217 +238,184 @@ body {
   }
 
   &_case {
-    grid-template-rows: $rythm-four-rows auto $rythm-four-rows;
-    row-gap: $gap-desktop; 
-    min-height: auto;
     color: var(--color-text-primary);
     background-color: var(--color-design-bg);
 
-    @media (max-width: $breakpoint-medium) {
-      display: flex;
-      flex-direction: column;
-      gap: $gap-desktop;
-      padding: $gap-desktop;
-    }
-
-    @media (max-width: $breakpoint-small) {
-      gap: $gap-mobile;
-      padding: $gap-mobile;
-    }
-
-    .description { 
-      grid-column: span 2;
-      gap: $gap-desktop;
-
-      @media (max-width: $breakpoint-small) {
-        gap: $gap-mobile;
-      }
-    }
-  }
-
-  &_history {
-    grid-template-rows: $rythm-four-rows auto $rythm-four-rows;
-    row-gap: $gap-desktop; 
-    min-height: auto;
-    color: var(--color-text-primary-inverted);
-    background-color: var(--color-code-bg);
-
-    @media (max-width: $breakpoint-medium) {
-      display: flex;
-      flex-direction: column;
-      gap: $gap-desktop;
-      padding: $gap-desktop;
-    }
-
-    @media (max-width: $breakpoint-small) {
-      gap: $gap-mobile;
-      padding: $gap-mobile;
-    }
-
-    .description { 
-      grid-column: span 2;
-      gap: $gap-desktop;
-
-      @media (max-width: $breakpoint-small) {
-        gap: $gap-mobile;
-      }
-    }
-  }
-
-  &_concept {
-    grid-template-rows: $rythm-four-rows auto $rythm-four-rows $rythm-four-rows;
-    row-gap: $gap-desktop; 
-    min-height: auto;
-    color: var(--color-text-primary-inverted);
-    background-color: var(--color-case-bg);
-
-    @media (max-width: $breakpoint-medium) {
-      display: flex;
-      flex-direction: column;
-      gap: $gap-desktop;
-      padding: $gap-desktop;
-    }
-
-    @media (max-width: $breakpoint-small) {
-      gap: $gap-mobile;
-      padding: $gap-mobile;
-    }
-
-    .description { 
-      grid-column: span 2;
-      gap: $gap-desktop;
-
-      @media (max-width: $breakpoint-small) {
-        gap: $gap-mobile;
-      }
-    }
-
-    .footer {
-      grid-column: span 6;
-      grid-row: 4;
-      margin: 0 - $gap-desktop;
-      padding: $gap-desktop;
-      align-items: center;
+    &_history {
+      color: var(--color-text-primary-inverted);
       background-color: var(--color-code-bg);
+    }
+
+    &_concept {
+      color: var(--color-text-primary-inverted);
+      background-color: var(--color-case-bg);
+    }
+
+    .description { 
+      grid-column: span 2;
+      grid-row: 2 / span 6;
+      gap: $gap-desktop;
 
       @media (max-width: $breakpoint-small) {
-        margin: 0 (0 - $gap-mobile) (0 - $gap-mobile) (0 - $gap-mobile);
-        padding: $gap-mobile;
-        align-items: start;
-        gap: 0;
+        gap: $gap-mobile;
+      }
+    }
+
+    .thumb {
+      position: relative;
+      grid-column: 3 / span 4;
+      grid-row: 2 / span 6;
+      gap: $gap-desktop;
+      margin-right: 0 - $gap-desktop;
+      max-height: 816px;
+      background-color: var(--color-design-system-bg);
+      overflow: hidden;
+      transition: $transition-default;
+
+      @media (max-width: $breakpoint-small) {
+        border-width: $spacing-x1;
+        margin-right: 0 - $gap-mobile;
+      }
+
+      img {
+        vertical-align: bottom;
+        
+        @media (max-width: $breakpoint-small) {
+          max-width: 100%;
+        }
+      }
+
+      .show {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: $spacing-x3;
+        height: $rythm-four-rows;
+        padding: 0 $spacing-x4;
+        color: var(--color-button-secondary-text);
+        background-color: var(--color-button-secondary-bg-default);
+        transition: $transition-default;
+
+        svg {
+          fill: var(--color-button-secondary-text);
+          transition: fill $transition-default;
+        }
+      }
+
+      &:hover {
+        .show {
+          color: var(--color-button-primary-text);
+          background-color: var(--color-button-primary-bg-hover);
+        }
+
+        svg {
+          fill: var(--color-button-primary-text);
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0 - ($rythm-four-rows + $rythm-two-rows + $rythm-two-rows);
+
+      @media (max-width: $breakpoint-small) {
+        margin-bottom: 0 - $rythm-row;
       }
     }
   }
 
-  .header {
-    grid-column: span 6;
-    grid-row: 1;
+  &_page {
+    grid-template-rows: repeat(4, $rythm-four-rows) auto repeat(3, $rythm-four-rows);
 
-    @media (max-width: $breakpoint-small) {
-      grid-column: 1;
+    .title {
+      display: flex;
+      align-items: center;
+      grid-column: span 6;
+      grid-row: 2 / span 3;
+    }
+
+    .description { 
+      grid-column: span 2;
+      grid-row: 5;
+      gap: $gap-desktop;
+
+      @media (max-width: $breakpoint-small) {
+        gap: $gap-mobile;
+      }
+    }
+
+    .gallery {
+      grid-column: 3 / span 4;
+      grid-row: 5;
     }
   }
+}
 
-  .description {
+.description {
+  display: flex;
+  flex-direction: column;
+
+  section {
     display: flex;
     flex-direction: column;
-
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: $rythm-row;
-    }
+    gap: $rythm-row;
   }
+}
 
-  .gallery {
-    grid-column: 3 / span 4;
-    gap: $gap-desktop;
-    margin-right: 0 - $gap-desktop;
+.footer {
 
-    @media (max-width: $breakpoint-small) {
-      gap: $gap-mobile;
-      margin: 0 (0 - $gap-mobile);
-    }
-  }
-
-  .footer {
-    display: grid;
+  &__contacts {
     position: relative;
-    grid-template-columns: subgrid;
-    gap: $spacing-x6;
-    color: var(--color-text-secondary-inverted); 
-    font-size: $font-size-body-secondary;
-    line-height: $line-height-body-secondary;
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: $spacing-x1;
+    z-index: 2;
+
+    @media (max-width: $breakpoint-medium) {
+      grid-column: 1 / span 3;
+    }
 
     @media (max-width: $breakpoint-small) {
-      display: flex;
-      flex-direction: column;
-      gap: $gap-mobile;
-      align-items: start;
-      justify-content: end;
-      grid-column: 1;
-      grid-row: 7 / -1;
+      grid-column: auto;
     }
+  }
 
-    &__contacts {
-      position: relative;
-      grid-column: 1 / span 1;
-      grid-row: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      gap: $spacing-x1;
-      z-index: 2;
+  &__status {
+    position: relative;
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-x1;
+    z-index: 2;
 
-      @media (max-width: $breakpoint-medium) {
-        grid-column: 1 / span 3;
-      }
-
-      @media (max-width: $breakpoint-small) {
-        grid-column: auto;
-      }
-    }
-
-    &__status {
-      position: relative;
-      grid-column: 2 / span 2;
-      grid-row: 1;
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-x1;
-      z-index: 2;
-
-      @media (max-width: $breakpoint-medium) {
-        grid-column: 4 / span 3;
-      }
-
-      @media (max-width: $breakpoint-small) {
-        grid-column: auto;
-      }
-    }
-
-    &__source, &__year {
-      position: relative;
-      grid-column: 1 / span 3;
-      grid-row: 1;
-      display: flex;
-      z-index: 2;
-
-      @media (max-width: $breakpoint-medium) {
-        grid-column: 1 / span 2;
-      }
-
-      @media (max-width: $breakpoint-small) {
-        grid-column: auto;
-      }
-    }
-
-    &__handmade {
+    @media (max-width: $breakpoint-medium) {
       grid-column: 4 / span 3;
-      grid-row: 1;
-      text-align: right;
     }
-  
+
+    @media (max-width: $breakpoint-small) {
+      grid-column: auto;
+    }
+  }
+
+  &__source {
+    position: relative;
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    display: flex;
+    z-index: 2;
+
+    @media (max-width: $breakpoint-medium) {
+      grid-column: 1 / span 2;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      grid-column: auto;
+    }
   }
 }
 
