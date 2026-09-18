@@ -107,8 +107,11 @@ body {
     .footer {
       align-items: end;
 
+
       @media (max-width: $breakpoint-small) {
         flex-direction: column-reverse;
+        align-items: start;
+        padding-top: $rythm-row * 6;
       }
 
       .status {
@@ -233,6 +236,12 @@ body {
         @media (max-width: $breakpoint-small) {
           margin-right: 0 - $spacing-x6;
         }
+      }
+    }
+
+    .footer {
+      @media (max-width: $breakpoint-small) {
+        margin-top: $rythm-two-rows;
       }
     }
   }
